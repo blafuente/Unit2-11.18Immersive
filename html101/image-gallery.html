@@ -12,7 +12,8 @@
         . will target a class*/
         /*div{ */
         #gallery-wrapper{
-            border: double red 10px
+            border: double red 5px;
+            text-align: center;
         }
         #top-section{
             border: solid blue 5px
@@ -22,6 +23,12 @@
         }
         #bottom-section{
             border: solid pink 5px
+        }
+        .thumb{
+            width: 15%;
+        }
+        img{
+            width: 1000px;
         }
     </style>
 </head>
@@ -33,12 +40,20 @@
             <h1>A photo gallery made with CSS, HTML, a tiny bit of JS, and a whole lotta love. </h1>
         </div>
 
+        <!-- an id is unique on a page -->
+        <!-- an id is like a serial number -->
         <div id="middle-section">
-            <h2>Middle Section</h2>
+            <!-- a class is not unique, but group things -->
+            <!-- a  -->
+            <img class="thumb" src="./arabia_mnt.jpg" onmouseover="bigImage.src = this.src" />
+            <img class="thumb" src="./callaway_gardens.jpg" onmouseover="bigImage.src = this.src" />
+            <img class="thumb" src="./Etowah_Indian_Mounds.jpg" onmouseover="bigImage.src = this.src" />
+            <img class="thumb" src="./prov_state_canyon.jpg" onmouseover="bigImage.src = this.src" />
+            <img class="thumb" src="./wormsloe.jpg" onmouseover="bigImage.src = this.src" />
         </div>
 
         <div id="bottom-section">
-            <h2>Bottom Section</h2>
+            <img src="./callaway_gardens.jpg" name="bigImage" />
         </div>
     </div>
 </body>
