@@ -1,0 +1,3 @@
+HyperText Markup Language (HTML) 
+- is the standard markup Language for creating web pages and web pplications. With Cascadinging Style Sheets (CSS) and Java Script,
+it forms a triad of cornerstone technologies for the World Wide Web. 
