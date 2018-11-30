@@ -18,7 +18,7 @@
         img{
             /* width: 1000px; */
             /* height: 100px; */
-            width: 100%
+            width: 100%;
         }
 
         #block1{
@@ -39,22 +39,39 @@
             width: 100px;
             /* padding: 10px; padding takes background with it */
             margin: 10px;
-            display: inline;
+            /* display: inline; */
             display: inline-block;
         }
         #block-wrapper{
             text-align: center;
+        }
+        .float-me{
+            float:left;
         }
     </style>
 
 </head>
 <body>
 
+    <div class="float-ex">
+            <div class="float-me">
+                <img src="http://starecat.com/content/wp-content/uploads/two-states-of-every-programmer-i-am-god-i-have-no-idea-what-im-doing.jpg" />
+            </div>
+            I feel like this sometimes.I feel like this sometimes.I feel like this sometimes.I feel like this sometimes.I feel like this sometimes.I feel like this sometimes.
+            I feel like this sometimes.I feel like this sometimes.I feel like this sometimes.I feel like this sometimes.I feel like this sometimes.I feel like this sometimes.
+            I feel like this sometimes.I feel like this sometimes.I feel like this sometimes.I feel like this sometimes.I feel like this sometimes.I feel like this sometimes.
+            I feel like this sometimes.I feel like this sometimes.I feel like this sometimes.I feel like this sometimes.I feel like this sometimes.I feel like this sometimes.
+            I feel like this sometimes.I feel like this sometimes.I feel like this sometimes.I feel like this sometimes.I feel like this sometimes.I feel like this sometimes.
+            I feel like this sometimes.I feel like this sometimes.I feel like this sometimes.I feel like this sometimes.I feel like this sometimes.I feel like this sometimes.
+
+    </div>
+
+
     <!-- <div class="meme-holder">
 		<img src="http://starecat.com/content/wp-content/uploads/two-states-of-every-programmer-i-am-god-i-have-no-idea-what-im-doing.jpg" />
-    </div>
+    </div> -->
     
-    <div class="meme-holder">
+    <!--<div class="meme-holder">
         <img src="http://starecat.com/content/wp-content/uploads/two-states-of-every-programmer-i-am-god-i-have-no-idea-what-im-doing.jpg" />
     </div> -->
 <h1>BLOCK ELEMENT !!!</h1>
@@ -64,7 +81,7 @@
     </li>
     <li>A BLOCK CAN have height and width</li>
     <li>NOTHING can ever be on ether side (internal to the parent) because
-        it's 100%. If you change the width, it wil ljust add margin.
+        it's 100%. If you change the width, it will just add margin.
         Blocks will ignore margin you add, becuase they're already 100%.
     </li>
     <li>Can be > 100%</li>

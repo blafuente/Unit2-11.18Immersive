@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Draw Car</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+    <style>
+    #car-box{
+        position: absolute;
+        top: 0px;
+        left: 400px;
+    }
+    .base{
+        height: 70px;
+        width: 350px;
+        background-color: silver;
+        border-top-left-radius: 30%;
+        border-bottom-left-radius: 10%;
+        top: 215px;
+        left: 100px;
+        position: absolute;
+    }
+    .front-wheel{
+        height: 70px;
+        width: 70px;
+        background-color: black;
+        border-radius: 50%;
+        top: 250px;
+        left: 150px;
+        position: absolute;
+    }
+    .back-wheel{
+        height: 70px;
+        width: 70px;
+        background-color: black;
+        border-radius: 50%;
+        top: 250px;
+        left: 340px;
+        position: absolute;
+    }
+    .exhaust{
+        height: 20px;
+        width: 35px;
+        background-color: black;
+        border-radius: 0%;
+        top: 270px;
+        left: 420px;
+        position: absolute;
+    }
+    .cabin{
+        height: 100px;
+        width: 150px;
+        background-color: silver;
+        border-top-left-radius: 69%;
+        top: 160px;
+        left: 180px;
+        position: absolute;
+    }
+    /* #rims{
+        background-color: lightgray;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        position: absolute;
+    } */
+    .front-rim{
+        top: 265px;
+        left: 165px;
+        background-color: lightgray;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        
+    }
+    .back-rim{
+        top: 265px;
+        left: 355px;
+        background-color: lightgray;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        position: absolute;
+    }
+    .back-window{
+        background-color: white;
+        height: 50px;
+        width: 50px;
+        top: 170px;
+        left: 270px;
+        position: absolute;
+    }
+    .front-window{
+        background-color: white;
+        height: 50px;
+        width: 60px;
+        top: 170px;
+        left: 200px;
+        position: absolute;
+        border-top-left-radius: 200%;
+    }
+    #space-invader {
+      box-shadow: 0 0 0 1em lightblue,
+      0 1em 0 1em lightblue,
+      -2.5em 1.5em 0 .5em lightblue,
+      2.5em 1.5em 0 .5em lightblue,
+      -3em -3em 0 0 lightblue,
+      3em -3em 0 0 lightblue,
+      -2em -2em 0 0 lightblue,
+      2em -2em 0 0 lightblue,
+      -3em -1em 0 0 lightblue,
+      -2em -1em 0 0 lightblue,
+      2em -1em 0 0 lightblue,
+      3em -1em 0 0 lightblue,
+      -4em 0 0 0 lightblue,
+      -3em 0 0 0 lightblue,
+      3em 0 0 0 lightblue,
+      4em 0 0 0 lightblue,
+      -5em 1em 0 0 lightblue,
+      -4em 1em 0 0 lightblue,
+      4em 1em 0 0 lightblue,
+      5em 1em 0 0 lightblue,
+      -5em 2em 0 0 lightblue,
+      5em 2em 0 0 lightblue,
+      -5em 3em 0 0 lightblue,
+      -3em 3em 0 0 lightblue,
+      3em 3em 0 0 lightblue,
+      5em 3em 0 0 lightblue,
+      -2em 4em 0 0 lightblue,
+      -1em 4em 0 0 lightblue,
+      1em 4em 0 0 lightblue,
+      2em 4em 0 0 lightblue;
+      background: lightblue;
+      width: 1em;
+      height: 1em;
+      overflow: hidden;
+      margin: 50px 0 70px 65px;
+      position:absolute;
+      top: 170px;
+      left: 140px;
+    }
+    #pacman {
+      width: 0px;
+      height: 0px;
+      border-right: 25px solid transparent;
+      border-top: 25px solid yellow;
+      border-left: 25px solid yellow;
+      border-bottom: 25px solid yellow;
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+      top: 230px;
+      left: 250px;
+      position: absolute;
+      -webkit-transform:rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+    .background {
+        background-color:green;
+        height: 311px;
+        width: 100%;
+        position: relative
+    }
+    .road{
+        background-color: grey;
+        height: 50px;
+        width: 100%;
+        position: relative;
+        border-top: 10px dashed gold;
+    }
+    </style>
+</head>
+<body>
+        <div class="background box"></div>
+        <div class="road box"></div> 
+        <div id="car-box">      
+            <div class="base box"></div>
+            <div class="cabin box"></div>
+            <div class="front-wheel box"></div>
+            <div class="back-wheel box"></div>
+            <div class="exhaust box"></div>
+        <!-- <div id="rims"> -->
+            <div class="front-rim"></div>
+            <div class="back-rim"></div>
+        <!-- </div>     -->
+            <div class="front-window"></div>
+            <div class="back-window"></div>
+            <div id="pacman"></div>
+        </div>  
+        <div id="space-invader"></div>
+        
+    <h1>CSS Car Lab</h1>
+        
+</body>
+</html>
