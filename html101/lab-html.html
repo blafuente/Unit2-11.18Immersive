@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Welcome to my Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:url"           content="https://www.your-domain.com/your-page.html" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Your Website Title" />
+    <meta property="og:description"   content="Your description" />
+    <meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" />
+    <style>
+        /* # will target an id
+        . will target a class*/
+    #gallery{
+        border: double black 5px;
+        text-align: center;
+    }
+    #top-section{
+            border: dotted red 5px
+    }
+    #middle-section{
+        border: dotted navy 5px;
+    }
+    #bottom-section{
+        border: dotted blue 5px
+    }
+    .team{
+        width: 15%;
+    }
+    #img{
+        width: 5px;
+    }
+    </style>
+
+</head>
+<body>
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Your like button code -->
+    <div class="fb-like" 
+        data-href="https://www.facebook.com/AtlantaFSA/" 
+        data-width="10" 
+        data-layout="standard" 
+        data-action="like" 
+        data-size="small" data-show-faces="true" data-share="true">
+    </div>
+
+    <div id="gallery">
+        <div id="top-section">
+            <h1>Atlanta Sports Wallpapers</h1>
+        </div>
+        <div id="middle-section">
+                <img src="./Hawks-Falcons.jpeg" name="bigImage" />
+                
+        </div>
+        <div id="bottom-section">
+                <img class="team" src="./ATLBraves A.jpg" onmouseover="bigImage.src = this.src" />
+                <img class="team" src="./ATLHawks.png" onmouseover="bigImage.src = this.src" />
+                <img class="team" src="./ATLUTD logo.png" onmouseover="bigImage.src = this.src" />
+                <img class="team" src="./Hawks-Falcons.jpeg" onmouseover="bigImage.src = this.src" />
+        </div>
+
+        
+
+
+    </div>
+</body>
+</html>
