@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script> -->
+
+    <style>
+        .briansDiv{
+            position: relative;
+            width: 500px;
+            height: 500px;
+            background-color: blue;
+        }
+
+        #briansLi {
+            color: red;
+        }
+        
+        .briansDiv > ul >li:hover {
+            color: green;
+        }
+        
+        .one#alsoOne{
+            /* if smooshed together, its saying AND. find things in one AND alsoOne
+            if seperated by a "," (comma), its saying OR */
+        }
+
+        #briansLi:hover{
+            color:maroon;
+            /* will only change color or anything when cursor is hovered over it */
+        }
+
+        .otherDiv{
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            width: 10px;
+            height: 10px;
+            background-color: red;
+        }
+
+        #one{
+            top: 40px;
+            left: 40px;
+        }
+
+        #two{
+            top: 140px;
+            left: 140px;
+
+        }
+
+        #three{
+            top: 240px;
+            left: 240px;
+        }
+    </style>
+
+</head>
+<body>
+    <div style="width: 100px; height: 100px;"> 
+        <!-- inline styling, will conflict with style above in the head.
+        will overwrite and its going out of style -->
+    
+    </div> 
+
+    <div class="briansDiv">
+        <ul>
+            <li id="briansLi">hi</li>
+            <li>not allowed</li>
+        </ul>
+        <div id="one" class="otherDiv"></div>
+        <div id="two" class="otherDiv"></div>
+        <div id="three" class="otherDiv"></div>
+    </div>
+
+    <header>
+        <p>There's different types of tags</p>
+        <ul>
+            <li>Hello World.</li>
+        </ul>
+    </header>
+    <h1 class="one" id="alsoOne">Hello Friends</h1>
+    <!-- <li id="briansLi">hi</li> -->
+    
+    <div class="otherDiv"></div>
+    <div class="otherDiv"></div>
+    <div class="otherDiv"></div>
+    
+</body>
+</html>

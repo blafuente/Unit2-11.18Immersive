@@ -103,52 +103,52 @@
         border-top-left-radius: 200%;
     }
     #space-invader {
-      box-shadow: 0 0 0 1em lightblue,
-      0 1em 0 1em lightblue,
-      -2.5em 1.5em 0 .5em lightblue,
-      2.5em 1.5em 0 .5em lightblue,
-      -3em -3em 0 0 lightblue,
-      3em -3em 0 0 lightblue,
-      -2em -2em 0 0 lightblue,
-      2em -2em 0 0 lightblue,
-      -3em -1em 0 0 lightblue,
-      -2em -1em 0 0 lightblue,
-      2em -1em 0 0 lightblue,
-      3em -1em 0 0 lightblue,
-      -4em 0 0 0 lightblue,
-      -3em 0 0 0 lightblue,
-      3em 0 0 0 lightblue,
-      4em 0 0 0 lightblue,
-      -5em 1em 0 0 lightblue,
-      -4em 1em 0 0 lightblue,
-      4em 1em 0 0 lightblue,
-      5em 1em 0 0 lightblue,
-      -5em 2em 0 0 lightblue,
-      5em 2em 0 0 lightblue,
-      -5em 3em 0 0 lightblue,
-      -3em 3em 0 0 lightblue,
-      3em 3em 0 0 lightblue,
-      5em 3em 0 0 lightblue,
-      -2em 4em 0 0 lightblue,
-      -1em 4em 0 0 lightblue,
-      1em 4em 0 0 lightblue,
-      2em 4em 0 0 lightblue;
-      background: lightblue;
+      box-shadow: 0 0 0 1em red,
+      0 1em 0 1em red,
+      -2.5em 1.5em 0 .5em red,
+      2.5em 1.5em 0 .5em red,
+      -3em -3em 0 0 red,
+      3em -3em 0 0 red,
+      -2em -2em 0 0 red,
+      2em -2em 0 0 red,
+      -3em -1em 0 0 red,
+      -2em -1em 0 0 red,
+      2em -1em 0 0 red,
+      3em -1em 0 0 red,
+      -4em 0 0 0 red,
+      -3em 0 0 0 red,
+      3em 0 0 0 red,
+      4em 0 0 0 red,
+      -5em 1em 0 0 red,
+      -4em 1em 0 0 red,
+      4em 1em 0 0 red,
+      5em 1em 0 0 red,
+      -5em 2em 0 0 red,
+      5em 2em 0 0 red,
+      -5em 3em 0 0 red,
+      -3em 3em 0 0 red,
+      3em 3em 0 0 red,
+      5em 3em 0 0 red,
+      -2em 4em 0 0 red,
+      -1em 4em 0 0 red,
+      1em 4em 0 0 red,
+      2em 4em 0 0 red;
+      background: red;
       width: 1em;
       height: 1em;
       overflow: hidden;
       margin: 50px 0 70px 65px;
-      position:absolute;
-      top: 170px;
+      position:relative;
+      top: -250px;
       left: 140px;
     }
     #pacman {
       width: 0px;
       height: 0px;
       border-right: 25px solid transparent;
-      border-top: 25px solid yellow;
-      border-left: 25px solid yellow;
-      border-bottom: 25px solid yellow;
+      border-top: 25px solid gold;
+      border-left: 25px solid gold;
+      border-bottom: 25px solid gold;
       border-top-left-radius: 25px;
       border-top-right-radius: 25px;
       border-bottom-left-radius: 25px;
@@ -163,7 +163,7 @@
       transform: rotate(180deg);
     }
     .background {
-        background-color:green;
+        background-color:midnightblue;
         height: 311px;
         width: 100%;
         position: relative
@@ -175,10 +175,22 @@
         position: relative;
         border-top: 10px dashed gold;
     }
+    #moon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      box-shadow: 15px 15px 0 0 goldenrod;
+      position: fixed;
+      top: 0px;
+      right: 100px;
+    }
     </style>
 </head>
-<body>
-        <div class="background box"></div>
+<body> 
+    
+        <div class="background box">
+                <!-- <img src="./starnight.jpg" name="bigImage" /> -->
+        </div>
         <div class="road box"></div> 
         <div id="car-box">      
             <div class="base box"></div>
@@ -195,6 +207,7 @@
             <div id="pacman"></div>
         </div>  
         <div id="space-invader"></div>
+        <div id="moon"></div>
         
     <h1>CSS Car Lab</h1>
         
