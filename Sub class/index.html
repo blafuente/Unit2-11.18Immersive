@@ -14,6 +14,7 @@
             width: 500px;
             height: 500px;
             background-color: blue;
+            padding: 100px;
         }
 
         #briansLi {
@@ -24,10 +25,10 @@
             color: green;
         }
         
-        .one#alsoOne{
+        /* .one#alsoOne{ */
             /* if smooshed together, its saying AND. find things in one AND alsoOne
             if seperated by a "," (comma), its saying OR */
-        }
+        
 
         #briansLi:hover{
             color:maroon;
@@ -49,24 +50,40 @@
         }
 
         #two{
-            top: 140px;
-            left: 140px;
+            top: 40px;
+            left: 80px;
 
         }
 
         #three{
-            top: 240px;
-            left: 240px;
+            top: 80px;
+            left: 40px;
+        }
+        .left{
+            width: 20%;
+            display: inline-block ;
+        }
+        .right{
+            width: 79%;
+            display: inline-block;
         }
     </style>
 
 </head>
 <body>
-    <div style="width: 100px; height: 100px;"> 
-        <!-- inline styling, will conflict with style above in the head.
-        will overwrite and its going out of style -->
+    <div class="container">
+        <div class="left">Hi I'm a div.</div>
+        <div class="right">Hi I'm another div.</div>
+    </div>    
+
+
+
+
+    <!-- <div style="width: 100px; height: 100px;"> 
+        inline styling, will conflict with style above in the head.
+        will overwrite and its going out of style
     
-    </div> 
+    </div>  -->
 
     <div class="briansDiv">
         <ul>
@@ -87,9 +104,6 @@
     <h1 class="one" id="alsoOne">Hello Friends</h1>
     <!-- <li id="briansLi">hi</li> -->
     
-    <div class="otherDiv"></div>
-    <div class="otherDiv"></div>
-    <div class="otherDiv"></div>
-    
+   
 </body>
 </html>
