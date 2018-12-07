@@ -8,6 +8,6 @@ brian.innerHTML = "FIGHT THE DRAGON."
 
 brian.style.backgroundColor = "green"
 
-var action = prompt("What do you select to do? [Fight/Flee]");
-console.log(action);
+// var action = prompt("What do you select to do? [Fight/Flee]");
+// console.log(action);
 
