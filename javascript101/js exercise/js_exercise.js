@@ -34,7 +34,7 @@ if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month 
 
 //Exercise 3
 //Tip service
-var bill = parseInt(prompt("Enter Bill amount "));
+var bill = parseFloat(prompt("Enter Bill amount "));
 var service = prompt("How was service? [good/fair/bad] ");
 if (service == "good"){
     sum = bill + (bill* 0.20);
@@ -43,11 +43,24 @@ if (service == "good"){
 } else if (service == "bad") {
     sum = bill + (bill * 0.10);
 }
-console.log("The bill total is now $" + sum);
+sum *= 100;
+sum = Math.ceil(sum);
+sum /= 100;
+console.log("The total bills is now $" + sum);
 
 function splitAmount(sum, numOfPeople){
     total = sum/numOfPeople;
+    total *= 100;
+    total = Math.ceil(total);
+    total /= 100;
     console.log("The total bill is $" + sum + ". Split among " + numOfPeople + " is $" + total);
 }
 numOfPeople = parseInt(prompt("Enter the number in the party: "))
 splitAmount(sum, numOfPeople);
+
+var tipAmounts = {
+    poor: 0.10,
+    fair: 0.15,
+    good: 0.20,
+}
+console.log("The total bill is $" + ((bill * tipAmounts[service]) + bill));
