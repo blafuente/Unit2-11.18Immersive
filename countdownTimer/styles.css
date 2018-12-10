@@ -1,0 +1,21 @@
+body{
+    /* background-color: blue; */
+    background: url('https://static.vecteezy.com/system/resources/previews/000/095/102/non_2x/vector-happy-christmas-cartoon-background.jpg') repeat center;
+    background-size: cover;
+    color: white;
+    height: 100vh;
+    text-align: center;
+}
+
+h1{
+    font-size: 40px;
+    margin: 40px 8px 0px;
+}
+
+.time-unit, .time-unit span{
+    display: inline-block;
+    padding: 10px;
+    background-color: red;
+    border-radius: 5px;
+    border: 1px solid green;
+}
