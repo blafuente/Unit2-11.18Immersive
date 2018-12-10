@@ -26,8 +26,27 @@ printNumbers(1,10);
 
 //print a square
 // function printSquare(s) {
-//     for (i=0; i < s+1; s * "*") {
-//         console.log(s); 
+//     for (i=0; i < s; i * "*") {
+//         console.log(i); 
 //     }
 // }
 // printSquare(5);
+
+
+// var array = ["Lachan", "Kim", "Moira"];
+function greetPerson() {
+    var array = ["Lachan", "Kim", "Moira"];
+    while (array > "") {
+        greet = array.pop();
+        console.log("Hello " + greet);
+    }
+}
+greetPerson();
+
+function binaryCount() {
+    num = [0,1,0,1,1,1,0,0];
+    b = num.pop();
+    a = num.indexOf(b);
+    console.log(a);
+    }
+binaryCount();
