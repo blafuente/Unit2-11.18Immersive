@@ -7,6 +7,10 @@ body{
     text-align: center;
 }
 
+.bg{
+    background: url('pictures/arena.png') no-repeat center;
+}
+
 h1{
     font-size: 40px;
     margin: 40px 8px 0px;
@@ -18,4 +22,15 @@ h1{
     background-color: red;
     border-radius: 5px;
     border: 1px solid green;
+}
+
+button{
+    text-align: center;
+    margin: 10px;
+    height: 40px;
+    width: 75px;
+}
+
+.timer2 {
+    color: blue;
 }
