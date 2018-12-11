@@ -1,0 +1,74 @@
+<!-- Scope -->
+<!-- determines what can see a variable -->
+<!-- - GLOBAL
+-- has no parent
+-- anyone can see it anywhere
+-- if it belongs to the window, or is defined outside
+of all functions (just insdie of a script tag), it is global 
+- Awesome for small programs or when necessary -->
+<!-- - dangerous when your prgram gets big 
+- in Python, globals are variables that are all the way 
+to the left. 
+
+- LOCAL
+-- local variables live INSIDE of functions and are visible 
+and changable only to that function and its child functions -->
+
+<script>
+    // this is NOT  inside any function. So it's a global
+    var iAmAGlobal = 1;
+    console.log(iAmAGlobal);
+    console.log(window.iAmAGlobal);
+
+    function checkScope(){
+        // in spite of this horrible variable name, it is NOT a global
+        // it's inside of a function, so NOBODY outside of this function
+        // can see or use it
+        // var iAmAGlobal = 2;
+        iAmAGlobal ++;
+        console.log(iAmAGlobal);
+
+        // DON'T EVER, unless you have a good reason, make
+        // a vraible insidea function that you have a global for.a
+        // IT IS CONFUSING. 
+
+    }
+    checkScope()
+    console.log(iAmAGlobal);
+
+
+
+    var a = 1;
+    function child(){
+        var b = 2;
+        console.log(a);
+        console.log(b);
+        for(var i = 0; i < 10; i++){
+            a++
+        }
+        function grandChild(){
+            console.log(`I am a grandchild. I can see and change
+            my stuff, my parent's stuff, and their parent's stuff`);
+            a++;
+            b++;
+        }
+        grandChild();
+        console.log(a);
+        console.log(b);
+    }
+    child();
+    // var b;
+    // b = 2;
+    // console.log(b);
+
+    // states of a variable
+    // - undeclared - no var X anywhere
+    // - declare - JS knows it exists
+    // - init/assign - not only does it exist, it has a value
+
+
+
+
+
+
+</script>
