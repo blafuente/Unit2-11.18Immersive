@@ -20,43 +20,43 @@ and changable only to that function and its child functions -->
     console.log(iAmAGlobal);
     console.log(window.iAmAGlobal);
 
-    function checkScope(){
-        // in spite of this horrible variable name, it is NOT a global
-        // it's inside of a function, so NOBODY outside of this function
-        // can see or use it
-        // var iAmAGlobal = 2;
-        iAmAGlobal ++;
-        console.log(iAmAGlobal);
+    // function checkScope(){
+    //     // in spite of this horrible variable name, it is NOT a global
+    //     // it's inside of a function, so NOBODY outside of this function
+    //     // can see or use it
+    //     // var iAmAGlobal = 2;
+    //     iAmAGlobal ++;
+    //     console.log(iAmAGlobal);
 
-        // DON'T EVER, unless you have a good reason, make
-        // a vraible insidea function that you have a global for.a
-        // IT IS CONFUSING. 
+    //     // DON'T EVER, unless you have a good reason, make
+    //     // a vraible insidea function that you have a global for.a
+    //     // IT IS CONFUSING. 
 
-    }
-    checkScope()
-    console.log(iAmAGlobal);
+    // }
+    // checkScope()
+    // console.log(iAmAGlobal);
 
 
 
-    var a = 1;
-    function child(){
-        var b = 2;
-        console.log(a);
-        console.log(b);
-        for(var i = 0; i < 10; i++){
-            a++
-        }
-        function grandChild(){
-            console.log(`I am a grandchild. I can see and change
-            my stuff, my parent's stuff, and their parent's stuff`);
-            a++;
-            b++;
-        }
-        grandChild();
-        console.log(a);
-        console.log(b);
-    }
-    child();
+    // var a = 1;
+    // function child(){
+    //     var b = 2;
+    //     console.log(a);
+    //     console.log(b);
+    //     for(var i = 0; i < 10; i++){
+    //         a++
+    //     }
+    //     function grandChild(){
+    //         console.log(`I am a grandchild. I can see and change
+    //         my stuff, my parent's stuff, and their parent's stuff`);
+    //         a++;
+    //         b++;
+    //     }
+    //     grandChild();
+    //     console.log(a);
+    //     console.log(b);
+    // }
+    // child();
     // var b;
     // b = 2;
     // console.log(b);
@@ -67,8 +67,40 @@ and changable only to that function and its child functions -->
     // - init/assign - not only does it exist, it has a value
 
 
+    // HOISTING
+    // Anytime you have  the word var, JavaScript will take 
+    // the var and put it at the top of the function/global
+    // where you like it or not
 
+    // var q = 1;
+    // function p(){
+    //     q++;
+    //     console.log(q); // log global, 1
+    //     var q = 3;
+    //     console.log(q);
+    // }
+    // p();
 
+    // in addition to var, JS got a facelift in 2015 that added
+    // "let" and "const"
+    // let + const = no more var
+    // let is a block lever variable
+    // it lives for as long as the {} it's inside of do
 
+    // for(var i = 0; i < 10; i++){
 
+    // }
+    // console.log(i);
+
+    // for(let j = 0; j < 10; j++){
+
+    // }
+    // console.log(j);
+
+    // for(const k = 0; k < 10; k++){
+
+    // }
+
+    const playerName = prompt("What is your name?");
+    playerName = "Joe";
 </script>
