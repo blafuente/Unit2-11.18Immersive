@@ -25,5 +25,14 @@ console.log($('#row p'));
 // jQuery adds listeners as CanvasPathMethods... ie, click = .click()
 // a listener takes 1 arg: code to run when event happens
 $('#hide').click(function(){
-    console.log('someone clicked on hide');
+    // console.log('someone clicked on hide');
+    $('#thing').hide();
+})
+$('#show').click(function(){
+    // console.log('someone clicked on hide');
+    $('#thing').show();
+})
+$('#toggle').click(function(){
+    // console.log('someone clicked on hide');
+    $('#thing').toggle();
 })
