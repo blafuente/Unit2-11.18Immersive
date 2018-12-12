@@ -36,3 +36,46 @@ $('#toggle').click(function(){
     // console.log('someone clicked on hide');
     $('#thing').toggle();
 })
+$('#html').click(function(){
+    // document.querySelector('#thing').innerHTML = "<p></p>"
+    $('#thing').html("<p>New Html here</p>");
+})
+$('#text').click(function(){
+    $('#thing').text("<p>Change the text</p>");
+})
+$('#css').click(function(){
+    // .css takes a JS Object...Object
+    // key is a string for any css property
+    // value is want you to apply
+    $('#thing').css({
+        "background-color": "green",
+        "border-radius": "50%",
+        "font-size": "100px"
+    })
+})
+$('#add-class').click(function(){
+    $('#thing').addClass('btn-danger')
+})
+$('#toggle-class').click(function(){
+    $('#thing').toggleClass('btn-danger')
+})
+
+$('#prepend').click(function(){
+    $('#thing').prepend('Some prepended text')
+})
+$('#append').click(function(){
+    $('#thing').append('Some appended text')
+})
+$('#fade-out').click(function(){
+    $('#thing').fadeToggle(1500)
+})
+$('#slide').click(function(){
+    $('#thing').slideToggle(2000)
+})
+$('#animate').click(function(){
+    $('#thing').animate({
+        'background-color': 'yellow',
+        'height': '200px',
+        'margin-left': '100px'
+    },3000)
+})
