@@ -9,6 +9,10 @@
     <!-- <script src="scripts.js"></script> -->
 </head>
 <body>
+
+    <form>
+        <input id="name" type="text" placeholder="Enter your name: "/>
+    </form>
     <!-- a message div, to hold messages we need to give to the player -->
     
 
@@ -16,9 +20,7 @@
         <h1>Tic Tac Toe</h1>
     </div>
 
-    <div id="message">
-        
-    </div>
+    <div id="message"></div>
     
     <!-- 
         All 3 rows, will have 3 buttons.
@@ -43,6 +45,10 @@
             <button id="C3" class="square">-</button>
 
         </div>
+    </div>
+
+    <div id="reset-button">
+        <button id="reset" onclick="reset()">RESET GAME</button>
     </div>
 
 

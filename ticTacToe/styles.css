@@ -32,3 +32,26 @@ body{
     font-size: 40px;
     color: blue;
 }
+
+.winning-square{
+    background-color: green;
+
+}
+
+#reset-button{
+    padding: 20px;
+    margin: auto;
+    width: 200px;
+    height: 80px;
+    border: 2px dashed black;
+    background-color: lightcoral;
+    text-align: center;
+    border-radius: 25%;
+
+}
+
+#reset{
+    margin: 5px;
+    width: 170px;
+    height: 70px;
+}
