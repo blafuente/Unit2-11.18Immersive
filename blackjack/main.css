@@ -7,3 +7,34 @@
     max-width: 800px;
     margin: auto;
 }
+
+.card{
+    display: inline-block;
+    width: 100px;
+    padding: 10px;    
+}
+
+.card img{
+    width: 100%;
+}
+
+.player-total{
+    color:white;
+    margin-left: 20px;
+}
+.player-hand{
+    color:white;
+    margin-left: 20px;
+}
+.dealer-hand{
+    color:white;
+    margin-left: 20px;
+
+}
+.dealer-total{
+    color:white;
+    margin-left: 20px;
+}
+
+.buttons{
+    text-align: center;}
