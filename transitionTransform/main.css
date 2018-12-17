@@ -71,8 +71,6 @@
 }
 
 .square.translate{
-    transition-delay: 5s;
-    transition-delay: 10s;
     transform: translate(200px,100px);
     
 }
