@@ -1,5 +1,13 @@
 
-
+body{
+    background-image: url("./NBApics/court_panel.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 50%;
+    
+}
 .logo{
     height: 455px;
     width: 455px;
