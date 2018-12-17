@@ -24,6 +24,7 @@ for children to play inside of */
     /* tell all child elements (card-back and card-front), they are in
     3D land, when you transform, do you like a good 3D child */
     transform-style: preserve-3d;
+    /* transform-origin: 20% 40%; */
 
 }
 
