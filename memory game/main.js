@@ -65,8 +65,8 @@ $(document).ready(()=>{
                     },2000);
                 }
             }else{
-                // only one card up. Do nothing
-            }
+                // only one card up. Do nothing.
+            }    
         });
     });
 });

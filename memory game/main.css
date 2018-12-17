@@ -4,12 +4,11 @@ body{
     /* background-position: center; */
     background-repeat: no-repeat;
     background-size: 100%;
-    /* top: 50%; */
-    
-    
-   
+    /* top: 50%; */ 
 }
-
+h1{
+    color: orange;
+}
 img{
 	/* Keep the image inside of the parent no matter what */
 	max-width: 100%;
