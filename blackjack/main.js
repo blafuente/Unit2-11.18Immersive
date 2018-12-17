@@ -2,97 +2,198 @@ const freshDeck = createDeck();
 let theDeck = freshDeck.slice();
 let playerHand = [];
 let dealerHand = [];
-//BlackJack deal function
+
+// blackjack deal function
 $('.deal-button').click(()=>{
     // console.log("User clicked on the deal button")
     // we need a deck!
+
+    // clear out the old cards
+    $('.card').html('');
+    playerHand = [];
+    dealerHand = [];
+    let playerScore = 0;
+    let dealerScore =
+
     theDeck = freshDeck.slice();
-    // we have a deck, we need to shuffle it!
+    // we have a deck. we need to shuffle it!
     shuffleDeck(theDeck);
-    // we have a shuffled deck now. give each player their cards.
-    // shift pulls the element off of the Array
-    // and returns it.
+    // We have a shuffled deck now. Give each player their cards
+    // playerHand.push(theDeck[0])
+    // shift pulls the first element off of the array
+    // and retuns it
+    // console.log(theDeck)
     // get the first element off of the deck and put it in topCard
     let topCard = theDeck.shift();
     // put topCard in the playerHand array
     playerHand.push(topCard);
-    // take next card in deck
+    // Take next card in deck
     topCard = theDeck.shift();
-    // give the dealer the new topCard
+    // give the dealer the new topCar
     dealerHand.push(topCard);
     topCard = theDeck.shift();
     playerHand.push(topCard);
     topCard = theDeck.shift();
     dealerHand.push(topCard);
-    // console.log(theDeck.length);
-    placeCard('player',1,playerHand[0])
-    placeCard('dealer',1,dealerHand[0])
-    placeCard('player',2,playerHand[1])
-    placeCard('dealer',2,dealerHand[1])
-    calculateTotal(playerHand,'player');
-    calculateTotal(dealerHand,'dealer');
+    // console.log(theDeck.length)
+    placeCard('player',1,playerHand[0]);
+    placeCard('dealer',1,dealerHand[0]);
+    placeCard('player',2,playerHand[1]);
+    placeCard('dealer',2,dealerHand[1]);
+    calculateTotal(playerHand,'player')
+    calculateTotal(dealerHand,'dealer')
 })
+
+$('.hit-button').click(()=>{
+    // grab the next card in the deck 
+    const topCard = theDeck.shift();
+    // push it onto the players Hand
+    playerHand.push(topCard)
+    placeCard('player',playerHand.length,topCard);
+    calculateTotal(playerHand, 'player')
+})
+
+$('.stand-button').click(()=>{
+    // console.log("User stands!!")
+    // What happens to the players hand, when they stand?
+    // Nothing.
+    // Control passes to the dealer
+    // Rules for the dealer:
+    // 1. If I have less than 17, I MUST hit.
+    // 2. If I have 17 or more I CANNOT hit, even if it
+    // means I will lose
+    let dealersTotal = calculateTotal(dealerHand,'dealer');
+    while (dealersTotal < 17){
+        const topCard = theDeck.shift();
+        dealerHand.push(topCard);
+        placeCard('dealer',dealerHand.length,topCard);
+        dealersTotal = calculateTotal(dealerHand,'dealer');
+    }
+    checkWin();
+})
+
+function checkWin(){
+    const playerTotal = calculateTotal(playersHand,'player');
+    const dealersTotal = calculateTotal(dealersHand,'dealer');
+
+    // 1. If the player has > 21, player busts and loses.
+    if(playerTotal > 21){
+        console.log("player wins!")
+    // 2. If the dealer has > 21, dealer busts and loses.
+    } else if (dealersTotal > 21) {
+        console.log("dealer wins")
+    // 3. If playersHand.length == 2 AND playerTotal == 21... BLACKJACK
+    } else if (playerHand.length === 2 && playerTotal ==21) {
+        console.log("BLACKJACK!")
+    // 4. If dealerHand.length == 2 AND dealersTotal == 21... BLACKJACK    
+    } else if (dealerHand.length === 2 && dealersTotal === 21) {
+        console.log("BLACKJACK! for dealer")
+    // 5. If player > dealer, player wins
+    } else if (playerTotal > dealersTotal) {
+        console.log("You beat the dealer")
+    // 6. if dealer > player, dealer wins
+    } else if (dealersTotal > playerTotal) {
+        console.log("dealer wins")
+    } else if (playerTotal == dealerHand) {
+        console.log("TIE!")
+    }
+    // 7. else... push (tie)
+}
+
 
 function calculateTotal(hand, who){
     // purpose:
-    // 1. find out the number and return
-    // 2. Update the DOM with the right number for whoever's hand it is
+    // 1. Find out the number and return
+    // 2. Update the DOM with the right number for
+    // whoever's hand it is
     let handTotal = 0;
-    // loop through the hand
+    // init bool for whereter this hand has an ace not.
+    let numAces = 0;
+    let hasACE = 0; 
+    // Loop through the hand
     hand.forEach((card,i)=>{
         // console.log(card);
-        // copy everything in the String, EXCEPT for the last char
+        // copy everything in the String, EXCEPT for the last
+        // char
         let thisCardsValue = card.slice(0,-1);
-        handTotal += Number(thisCardsValue)
+        // handle J, Q, K, & A
+        if(thisCardsValue > 10){
+            thisCardsValue = 10;
+        } else  if (thisCardsValue == 1) {
+            // this card is an ACE!
+            // flip our boolean
+            hasACE = true;
+            numAces++;
+            // thisCardsValue = 11;
+        }
+        handTotal += Number(thisCardsValue);
     })
-    console.log(handTotal);
+    // Done looping. We have their total hand, will all aces 
+    // as 11, and all face card as 10
+    // how many aces should we bother reduce down to a 1?
+    if(hasACE & handTotal <= 10){
+        // add 10 one time
+        handTotal += 10; 
+        // start remove 10 for each ace
+        // for(let i = 0; i < numAces; i++){
+
+        // }
+    }
+
+    console.log(handTotal)
+    const classSelector = `.${who}-total`;
+    $(classSelector).html(handTotal);
+    return handTotal
 }
 
 
 function placeCard(who,where,what){
-    // who = ? ... option 1: 'player', option: dealer
+    // who = ? ... option 1: 'player', option: 'dealer'
     // where = ? ... option 1-6
-    // what = ? ... 1h-13h, 1s-13s, 1d-13d, 1c-13c
+    // what = ? ... 1h-13h, 1s-13s, 1d-13d, 1c-13c 
     const classSelector = `.${who}-cards .card-${where}`;
     $(classSelector).html(`<img src="./cards/${what}.png" />`);
 }
 
+
 function createDeck(){
-    //I am a local variable. No one knows about this var, but me
-    let newDeck = []; 
+    // we need to use slice, or we Will copy 
+    // the pointer/reference to the
+    // Array, and will wil change the orginal deck
+    // I am a local variable. No one knows about this var, but me!
+    let newDeck = [];
     // Card = suit letter + value
-    const suits = ['h', 's', 'd', 'c'];
+    const suits = ['h','s','d','c'];
     // Outer loop is for each suit
-    // a forEach loop takes 1 arg: function
+    // a foreach loop takes 1 arg: function
     // that function gets 2 args:
     // 1. what to call this element in loop
-    // 2. index loops is on 
-    suits.forEach((s,index)=>{ //same as for(s=0;s<suits.length;s++)
+    // 2. index loop is on
+    suits.forEach((s,index)=>{
         // inner loop for card value
         for(let c = 1; c <= 13; c++){
-            newDeck.push(`${c}${s}`)
-
+            newDeck.push(`${c}${s}`);
         }
     })
-    // console.log(newDeck);
+    // console.log(newDeck)
     return newDeck;
 }
 
 function shuffleDeck(aDeckToBeShuffled){
-    // Loop. A lot. like thos machines in casinos that make 
-    // funn noises.
-    // When the loop (lots of times)is done, the array 
+    // Loop. A lot. Like those machines in casinos that make 
+    // funny noises.
+    // When the loop (lots of times) is document, the array 
     // (deck) will be shuffled
     for(let i = 0; i < 100000; i++){
         let rand1 = Math.floor(Math.random() * 52);
         let rand2 = Math.floor(Math.random() * 52);
-        // we need to switch aDeckToBeShuffled[rand1] with 
+        // we need to switch aDeckToBeShuffled[rand1] with
         // aDeckToBeShuffled[rand2].
-        // BUT, we have to save the value of one of them so 
-        // we can keep it for later 
+        // BUT, we have to save the value of one of them so
+        // we can keep it for later
         let card1Defender = aDeckToBeShuffled[rand1];
-        aDeckToBeShuffled[rand1] = aDeckToBeShuffled[rand2];
-        aDeckToBeShuffled[rand2] = card1Defender
+        aDeckToBeShuffled[rand1] = aDeckToBeShuffled[rand2]
+        aDeckToBeShuffled[rand2] = card1Defender;
     }
-    console.log(aDeckToBeShuffled)
+    // console.log(aDeckToBeShuffled);
 }
