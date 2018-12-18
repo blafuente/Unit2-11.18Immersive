@@ -62,7 +62,7 @@ $(document).ready(()=>{
                     // setTimeout to the rescue!
                     setTimeout(()=>{
                         cardsUp.removeClass('flip');
-                    },2000);
+                    },1500);
                 }
             }else{
                 // only one card up. Do nothing.

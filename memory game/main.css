@@ -22,7 +22,7 @@ img{
 	height: 300px;
 }
 
-/* Card-holder is the child, it is teh thing that will flip */
+/* Card-holder is the child, it is the thing that will flip */
 /* I have 2 children, front and back, they do not flip... I do */
 .card-holder{
 	position: relative;
@@ -56,5 +56,5 @@ img{
 
 .matched{
     transition-duration: 1s;
-    transform: rotateY(180deg);
+    transform: rotateY(540deg);
 }
