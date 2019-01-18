@@ -1,0 +1,14 @@
+body{
+    background-color: #3fd3d1;
+}
+
+#movie-grid{
+    text-align: center;
+}
+
+img{
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+
+}

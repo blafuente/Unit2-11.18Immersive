@@ -48,34 +48,46 @@ function Ball(x,y,r){
     this.r = r;
     this.xDirection = 1;
     this.yDirection = 1;
+    this.randX = Math.random() * 25;
+    this.randY = Math.random() * 25;
 }
 
-Ball.prototype.drawBall = function(){
-    context.beginPath();
-    context.arc(this.x,this.y,this.r,this.sr,this.er);
-    context.fill();
-}
+// Ball.prototype.drawBall = function(){
+//     context.beginPath();
+//     context.arc(this.x,this.y,this.r,this.sr,this.er);
+//     context.fill();
+// }
 Ball.prototype.updateBallPosition = function(){
     // clearRect takes 4 args, topx, topy, botx, boty... wipe!
-    context.clearRect(0, 0, 500, 500);
-    if(this.x >= 500){
+    // context.clearRect(0, 0, 500, 500);
+    if(this.x >= 450){
         this.xDirection = -this.xDirection;
-    }else if(this.x <= 0){
+    }else if(this.x <= 50){
         this.xDirection = -this.xDirection;
     }
-    if(this.y >= 500){
+    if(this.y >= 450){
         this.yDirection = -this.yDirection;
-    }else if(this.y <=0){
+    }else if(this.y <=50){
         this.yDirection = -this.yDirection;
     }
-    this.drawBall();
-    this.x += 5 * this.xDirection;
-    this.y += 5 * this.yDirection;
+    // this.drawBall();
+    this.x += this.randX * this.xDirection;
+    this.y += this.randY * this.yDirection;
 }
 
-aBall = new Ball(100,100,50);
-anotherBall = new Ball(400,400,50);
-thirdBall = new Ball(90, 200, 50);
+
+function drawBalls(){
+    context.clearRect(0, 0, 500, 500);
+    bouncyBalls.forEach((ball)=>{
+        context.beginPath();
+        context.arc(ball.x,ball.y,ball.r,ball.sr,ball.er);
+        context.fill();
+    });
+}
+
+aBall = new Ball(100,200,50);
+anotherBall = new Ball(300,400,50);
+thirdBall = new Ball(200, 300, 50);
 
 let bouncyBalls = [aBall,anotherBall,thirdBall];
 
@@ -84,6 +96,9 @@ bouncyBalls.forEach((currBall)=>{
         currBall.updateBallPosition();
     },33)   
 });
+
+setInterval(drawBalls,33);
+
 
 // aBall.drawBall();
 // anotherBall.drawBall();
